@@ -8,6 +8,7 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from "@/component
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "wouter";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -52,7 +53,9 @@ export default function Home() {
           <span className="font-display font-bold text-xl tracking-tight">Extensa</span>
         </div>
         <nav className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground">
-          <a href="#vision" className="hover:text-foreground transition-colors">Vision</a>
+          <a href="#features" className="hover:text-foreground transition-colors">Capabilities</a>
+          <a href="#process" className="hover:text-foreground transition-colors">Process</a>
+          <Link href="/vision"><a className="hover:text-foreground transition-colors">Vision</a></Link>
         </nav>
         <Button variant="outline" className="font-medium hidden sm:flex">
           Login
@@ -135,36 +138,50 @@ export default function Home() {
                     </form>
                   </Form>
                   <p className="text-xs text-muted-foreground pl-1">
-                    Enter your email to join the waiting list.
+                    Get your ICP identification + 10 free leads instantly.
                   </p>
                 </div>
               )}
             </div>
           </motion.div>
 
-          {/* Vision Section */}
-          <motion.div 
-            id="vision"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="border-t border-border pt-24"
-          >
-            <div className="grid md:grid-cols-12 gap-12">
-              <div className="md:col-span-4">
-                <h2 className="text-2xl font-display font-medium">Vision</h2>
-              </div>
-              <div className="md:col-span-8">
-                <p className="text-2xl md:text-3xl font-light leading-tight text-muted-foreground">
-                  <span className="text-foreground">Distribution is the bottleneck of the modern internet.</span> Great products die in obscurity because connecting with the right audience is manual, expensive, and imprecise.
+          {/* Value Props / Minimal Grid */}
+          <div className="grid md:grid-cols-3 gap-px bg-border/50 border border-border/50">
+            {[
+              {
+                icon: <Target className="w-6 h-6" />,
+                title: "ICP Identification",
+                desc: "AI analyzes your best customers to build a precise profile of who buys next."
+              },
+              {
+                icon: <Zap className="w-6 h-6" />,
+                title: "24-Hour Turnaround",
+                desc: "From sign-up to actionable data in one day. Speed is our currency."
+              },
+              {
+                icon: <BarChart3 className="w-6 h-6" />,
+                title: "10 High-Intent Leads",
+                desc: "Start with a sample of 10 verifed leads matching your exact criteria."
+              }
+            ].map((feature, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 + 0.4, duration: 0.5 }}
+                className="bg-background p-8 md:p-10 flex flex-col gap-4 hover:bg-secondary/20 transition-colors"
+              >
+                <div className="w-10 h-10 bg-secondary flex items-center justify-center text-foreground mb-2">
+                  {feature.icon}
+                </div>
+                <h3 className="text-lg font-medium font-display">{feature.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {feature.desc}
                 </p>
-                <p className="text-xl md:text-2xl font-light leading-relaxed text-muted-foreground mt-8">
-                  Extensa is building the infrastructure to solve this. An AI engine that doesn't just find leads, but understands the fundamental DNA of your ideal customer and routes your value directly to them. No manual searching. No guesswork. Just pure, algorithmic growth.
-                </p>
-              </div>
-            </div>
-          </motion.div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </main>
       
