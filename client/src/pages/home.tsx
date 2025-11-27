@@ -188,8 +188,8 @@ export default function Home() {
         <div className="container mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-muted-foreground">
           <p>&copy; 2025 Extensa AI Inc.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-foreground">Privacy</a>
-            <a href="#" className="hover:text-foreground">Terms</a>
+            <Link href="/privacy"><a className="hover:text-foreground">Privacy</a></Link>
+            <Link href="/terms"><a className="hover:text-foreground">Terms</a></Link>
             <a href="#" className="hover:text-foreground">Twitter</a>
           </div>
         </div>
