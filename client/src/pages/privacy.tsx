@@ -89,7 +89,7 @@ export default function Privacy() {
             <section className="mb-8">
               <h2 className="text-xl font-display font-medium mb-4">5. Contact Us</h2>
               <p className="text-muted-foreground">
-                If you have any questions about this privacy policy or our privacy practices, please contact us at support@extensa.ai.
+                If you have any questions about this privacy policy or our privacy practices, please contact us at hi@extensa.app.
               </p>
             </section>
           </div>
@@ -102,7 +102,6 @@ export default function Privacy() {
           <div className="flex gap-6">
             <Link href="/privacy"><a className="hover:text-foreground">Privacy</a></Link>
             <Link href="/terms"><a className="hover:text-foreground">Terms</a></Link>
-            <a href="#" className="hover:text-foreground">Twitter</a>
           </div>
         </div>
       </footer>
