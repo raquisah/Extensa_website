@@ -16,7 +16,7 @@ export default function Terms() {
               <div className="w-8 h-8 bg-primary text-primary-foreground flex items-center justify-center font-display font-bold text-xl">
                 E
               </div>
-              <span className="font-display font-bold text-xl tracking-tight">Extensa</span>
+              <span className="font-display font-bold text-xl tracking-tight">Extensa.app</span>
             </div>
           </Link>
         </div>
@@ -88,7 +88,7 @@ export default function Terms() {
 
       <footer className="border-t border-border bg-background relative z-20">
         <div className="container mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-muted-foreground">
-          <p>&copy; 2025 Extensa AI Inc.</p>
+          <p>&copy; 2025 Extensa.app</p>
           <div className="flex gap-6">
             <Link href="/privacy"><a className="hover:text-foreground">Privacy</a></Link>
             <Link href="/terms"><a className="hover:text-foreground">Terms</a></Link>

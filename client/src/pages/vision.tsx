@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import { JoinWaitlistDialog } from "@/components/join-waitlist";
 
 export default function Vision() {
   return (
@@ -17,16 +18,18 @@ export default function Vision() {
               <div className="w-8 h-8 bg-primary text-primary-foreground flex items-center justify-center font-display font-bold text-xl">
                 E
               </div>
-              <span className="font-display font-bold text-xl tracking-tight">Extensa</span>
+              <span className="font-display font-bold text-xl tracking-tight">Extensa.app</span>
             </div>
           </Link>
         </div>
         <nav className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground">
           <Link href="/"><a className="hover:text-foreground transition-colors">Home</a></Link>
         </nav>
-        <Button variant="outline" className="font-medium hidden sm:flex rounded-none">
-          Get Early Access
-        </Button>
+        <JoinWaitlistDialog>
+          <Button variant="outline" className="font-medium hidden sm:flex rounded-none">
+            Get Early Access
+          </Button>
+        </JoinWaitlistDialog>
       </header>
 
       <main className="flex-grow relative z-20">
@@ -80,7 +83,7 @@ export default function Vision() {
 
       <footer className="border-t border-border bg-background relative z-20">
         <div className="container mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-muted-foreground">
-          <p>&copy; 2025 Extensa AI Inc.</p>
+          <p>&copy; 2025 Extensa.app</p>
           <div className="flex gap-6">
             <Link href="/privacy"><a className="hover:text-foreground">Privacy</a></Link>
             <Link href="/terms"><a className="hover:text-foreground">Terms</a></Link>
