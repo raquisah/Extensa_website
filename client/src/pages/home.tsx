@@ -53,13 +53,10 @@ export default function Home() {
           <span className="font-display font-bold text-xl tracking-tight">Extensa</span>
         </div>
         <nav className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground">
-          <a href="#features" className="hover:text-foreground transition-colors">Capabilities</a>
-          <a href="#process" className="hover:text-foreground transition-colors">Process</a>
           <Link href="/vision"><a className="hover:text-foreground transition-colors">Vision</a></Link>
+          <a href="#process" className="hover:text-foreground transition-colors">Process</a>
         </nav>
-        <Button variant="outline" className="font-medium hidden sm:flex">
-          Login
-        </Button>
+        <div className="w-[70px] hidden sm:block"></div> {/* Spacer to balance layout since Login is gone */}
       </header>
 
       <main className="flex-grow relative z-20">
@@ -112,7 +109,7 @@ export default function Home() {
                           <FormItem className="flex-grow">
                             <FormControl>
                               <Input 
-                                placeholder="enter your work email" 
+                                placeholder="enter your email" 
                                 className="h-12 bg-background/80 backdrop-blur-sm border-muted-foreground/20 focus:border-primary transition-all rounded-none" 
                                 {...field} 
                               />
@@ -138,7 +135,7 @@ export default function Home() {
                     </form>
                   </Form>
                   <p className="text-xs text-muted-foreground pl-1">
-                    Get your ICP identification + 10 free leads instantly.
+                    Get your ICP identification + 10 free leads in 24 hours.
                   </p>
                 </div>
               )}
