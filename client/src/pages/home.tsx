@@ -20,14 +20,14 @@ export default function Home() {
           </div>
           <span className="font-display font-bold text-xl tracking-tight">Extensa</span>
         </div>
-        <nav className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground">
-          <Link href="/vision"><a className="hover:text-foreground transition-colors">Vision</a></Link>
-        </nav>
-        <JoinWaitlistDialog>
-          <Button variant="outline" className="font-medium hidden sm:flex rounded-none">
-            Get Early Access
-          </Button>
-        </JoinWaitlistDialog>
+        <div className="flex items-center gap-8">
+          <Link href="/vision"><a className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hidden md:block">Vision</a></Link>
+          <JoinWaitlistDialog>
+            <Button variant="outline" className="font-medium hidden sm:flex rounded-none">
+              Get Early Access
+            </Button>
+          </JoinWaitlistDialog>
+        </div>
       </header>
 
       <main className="flex-grow relative z-20">

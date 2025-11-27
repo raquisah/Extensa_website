@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import { JoinWaitlistDialog } from "@/components/join-waitlist";
 
 export default function Privacy() {
   return (
@@ -20,13 +21,17 @@ export default function Privacy() {
             </div>
           </Link>
         </div>
-        <nav className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground">
-          <Link href="/"><a className="hover:text-foreground transition-colors">Home</a></Link>
-          <Link href="/vision"><a className="hover:text-foreground transition-colors">Vision</a></Link>
-        </nav>
-        <Button variant="outline" className="font-medium hidden sm:flex rounded-none">
-          Get Early Access
-        </Button>
+        <div className="flex items-center gap-8">
+          <nav className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground">
+            <Link href="/"><a className="hover:text-foreground transition-colors">Home</a></Link>
+            <Link href="/vision"><a className="hover:text-foreground transition-colors">Vision</a></Link>
+          </nav>
+          <JoinWaitlistDialog>
+            <Button variant="outline" className="font-medium hidden sm:flex rounded-none">
+              Get Early Access
+            </Button>
+          </JoinWaitlistDialog>
+        </div>
       </header>
 
       <main className="flex-grow relative z-20">
