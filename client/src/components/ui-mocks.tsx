@@ -94,3 +94,77 @@ export const LeadListMock = () => {
     </div>
   );
 };
+
+export const ConnectMock = () => {
+  return (
+    <div className="w-full max-w-sm mx-auto bg-card border border-border shadow-xl rounded-xl overflow-hidden">
+      <div className="p-3 border-b border-border flex items-center justify-between bg-muted/30">
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-[10px] font-bold text-blue-600 dark:text-blue-400">AI</div>
+          <div className="text-[10px] font-medium">Outreach Sequence</div>
+        </div>
+        <div className="text-[10px] text-green-600 dark:text-green-400 font-medium flex items-center gap-1">
+          <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" /> Active
+        </div>
+      </div>
+      <div className="p-4 space-y-3">
+        <div className="p-3 bg-muted/50 rounded-lg text-xs space-y-2">
+          <div className="flex justify-between text-[10px] text-muted-foreground">
+            <span>Step 1: LinkedIn Connection</span>
+            <span>Just now</span>
+          </div>
+          <p className="text-muted-foreground">"Hi [Name], noticed your work at [Company]. I'm building..."</p>
+        </div>
+        <div className="flex justify-center">
+           <div className="h-4 w-px bg-border" />
+        </div>
+        <div className="p-3 bg-muted/50 rounded-lg text-xs space-y-2 opacity-50">
+          <div className="flex justify-between text-[10px] text-muted-foreground">
+            <span>Step 2: Email Follow-up</span>
+            <span>In 2 days</span>
+          </div>
+          <p className="text-muted-foreground">"Wanted to circle back on..."</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const AnalyzeMock = () => {
+  return (
+    <div className="w-full max-w-sm mx-auto bg-card border border-border shadow-xl rounded-xl overflow-hidden">
+      <div className="p-4 border-b border-border">
+        <div className="flex justify-between items-end mb-2">
+          <div>
+            <div className="text-[10px] text-muted-foreground uppercase tracking-wider">Conversion Rate</div>
+            <div className="text-2xl font-display font-medium">12.4%</div>
+          </div>
+          <div className="text-xs text-green-600 dark:text-green-400 font-medium mb-1">
+            +2.4% this week
+          </div>
+        </div>
+        <div className="h-16 flex items-end gap-1">
+          {[30, 45, 35, 50, 45, 60, 55, 70, 65, 80].map((h, i) => (
+             <motion.div 
+               key={i}
+               initial={{ height: 0 }}
+               whileInView={{ height: `${h}%` }}
+               transition={{ delay: i * 0.05, duration: 0.5 }}
+               className="flex-1 bg-primary/10 rounded-sm hover:bg-primary/20 transition-colors"
+             />
+          ))}
+        </div>
+      </div>
+      <div className="p-3 bg-muted/30 grid grid-cols-2 gap-px">
+         <div className="text-center py-1">
+            <div className="text-[10px] text-muted-foreground">Sent</div>
+            <div className="text-sm font-medium">1,240</div>
+         </div>
+         <div className="text-center py-1 border-l border-border">
+            <div className="text-[10px] text-muted-foreground">Replied</div>
+            <div className="text-sm font-medium">154</div>
+         </div>
+      </div>
+    </div>
+  );
+};

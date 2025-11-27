@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { Zap, Target, BarChart3, Search, Users } from "lucide-react";
+import { Zap, Target, BarChart3, Search, Users, MessageSquare, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { EmailForm, JoinWaitlistDialog } from "@/components/join-waitlist";
-import { ICPChatMock, LeadListMock } from "@/components/ui-mocks";
+import { ICPChatMock, LeadListMock, ConnectMock, AnalyzeMock } from "@/components/ui-mocks";
 
 export default function Home() {
   return (
@@ -64,7 +64,7 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Feature 1: Discovery */}
+          {/* Feature 1: Search */}
           <div className="grid md:grid-cols-2 gap-16 items-center mb-32 border-t border-border/50 pt-24">
             <motion.div 
               initial={{ opacity: 0, x: -20 }}
@@ -75,14 +75,14 @@ export default function Home() {
               <div className="w-10 h-10 bg-secondary flex items-center justify-center text-foreground mb-6 rounded-lg">
                 <Search className="w-5 h-5" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-display font-medium mb-4">Smart Discovery</h2>
+              <div className="text-sm font-mono text-muted-foreground mb-2">01. Search</div>
+              <h2 className="text-3xl md:text-4xl font-display font-medium mb-4">Discovery Engine</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 Connect your data sources, and let Extensa's AI analyze your network to uncover high-potential prospects that match your unique DNA.
               </p>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Deep network analysis</li>
                 <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Behavioral pattern matching</li>
-                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Automated ICP refinement</li>
               </ul>
             </motion.div>
             <motion.div
@@ -97,7 +97,7 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Feature 2: Matching */}
+          {/* Feature 2: Find */}
           <div className="grid md:grid-cols-2 gap-16 items-center mb-32 border-t border-border/50 pt-24">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -119,6 +119,7 @@ export default function Home() {
               <div className="w-10 h-10 bg-secondary flex items-center justify-center text-foreground mb-6 rounded-lg">
                 <Users className="w-5 h-5" />
               </div>
+              <div className="text-sm font-mono text-muted-foreground mb-2">02. Find</div>
               <h2 className="text-3xl md:text-4xl font-display font-medium mb-4">Intelligent Matching</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 Stop wasting time on cold outreach. Extensa scores every interaction to identify which prospects are ready to convert right now.
@@ -126,7 +127,73 @@ export default function Home() {
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Real-time intent scoring</li>
                 <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Priority ranking system</li>
-                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Instant lead delivery</li>
+              </ul>
+            </motion.div>
+          </div>
+
+          {/* Feature 3: Connects */}
+          <div className="grid md:grid-cols-2 gap-16 items-center mb-32 border-t border-border/50 pt-24">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="w-10 h-10 bg-secondary flex items-center justify-center text-foreground mb-6 rounded-lg">
+                <MessageSquare className="w-5 h-5" />
+              </div>
+              <div className="text-sm font-mono text-muted-foreground mb-2">03. Connects</div>
+              <h2 className="text-3xl md:text-4xl font-display font-medium mb-4">Automated Outreach</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                Reach out at the perfect moment with AI-crafted messages that sound like you. Multi-channel sequences ensure you never miss an opportunity.
+              </p>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Personalized messaging</li>
+                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Automated follow-ups</li>
+              </ul>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative"
+            >
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl blur-xl" />
+              <ConnectMock />
+            </motion.div>
+          </div>
+
+          {/* Feature 4: Analyze */}
+          <div className="grid md:grid-cols-2 gap-16 items-center mb-32 border-t border-border/50 pt-24">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative order-2 md:order-1"
+            >
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl blur-xl" />
+              <AnalyzeMock />
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="order-1 md:order-2"
+            >
+              <div className="w-10 h-10 bg-secondary flex items-center justify-center text-foreground mb-6 rounded-lg">
+                <TrendingUp className="w-5 h-5" />
+              </div>
+              <div className="text-sm font-mono text-muted-foreground mb-2">04. Analyze & Improve</div>
+              <h2 className="text-3xl md:text-4xl font-display font-medium mb-4">Continuous Growth</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                The engine gets smarter with every interaction. Track real-time performance metrics and let the AI refine your strategy for better results.
+              </p>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Conversion analytics</li>
+                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Self-optimizing feedback loops</li>
               </ul>
             </motion.div>
           </div>
