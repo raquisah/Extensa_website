@@ -18,7 +18,7 @@ export default function Home() {
           <div className="w-8 h-8 bg-primary text-primary-foreground flex items-center justify-center font-display font-bold text-xl">
             E
           </div>
-          <span className="font-display font-bold text-xl tracking-tight">Extensa.app</span>
+          <span className="font-display font-bold text-xl tracking-tight">Extensa</span>
         </div>
         <nav className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground">
           <Link href="/vision"><a className="hover:text-foreground transition-colors">Vision</a></Link>

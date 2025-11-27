@@ -18,7 +18,7 @@ export default function Vision() {
               <div className="w-8 h-8 bg-primary text-primary-foreground flex items-center justify-center font-display font-bold text-xl">
                 E
               </div>
-              <span className="font-display font-bold text-xl tracking-tight">Extensa.app</span>
+              <span className="font-display font-bold text-xl tracking-tight">Extensa</span>
             </div>
           </Link>
         </div>
