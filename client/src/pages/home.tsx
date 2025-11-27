@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import { Zap, Target, BarChart3 } from "lucide-react";
+import { Zap, Target, BarChart3, Search, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { EmailForm, JoinWaitlistDialog } from "@/components/join-waitlist";
+import { ICPChatMock, LeadListMock } from "@/components/ui-mocks";
 
 export default function Home() {
   return (
@@ -15,10 +16,14 @@ export default function Home() {
       {/* Navigation */}
       <header className="relative z-20 container mx-auto px-6 py-8 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-primary text-primary-foreground flex items-center justify-center font-display font-bold text-xl">
-            E
-          </div>
-          <span className="font-display font-bold text-xl tracking-tight">Extensa</span>
+          <Link href="/">
+            <div className="flex items-center gap-2 cursor-pointer">
+              <div className="w-8 h-8 bg-primary text-primary-foreground flex items-center justify-center font-display font-bold text-xl">
+                E
+              </div>
+              <span className="font-display font-bold text-xl tracking-tight">Extensa</span>
+            </div>
+          </Link>
         </div>
         <div className="flex items-center gap-8">
           <Link href="/vision"><a className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hidden md:block">Vision</a></Link>
@@ -31,14 +36,14 @@ export default function Home() {
       </header>
 
       <main className="flex-grow relative z-20">
-        <div className="container mx-auto px-6 pt-20 pb-32 max-w-5xl">
+        <div className="container mx-auto px-6 pt-20 pb-24 max-w-5xl">
           
           {/* Hero Section */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex flex-col items-start gap-8 mb-24"
+            className="flex flex-col items-start gap-8 mb-32"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 border border-border bg-background/50 backdrop-blur-sm text-xs font-medium tracking-wide uppercase text-muted-foreground">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
@@ -59,43 +64,73 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Value Props / Minimal Grid */}
-          <div className="grid md:grid-cols-3 gap-px bg-border/50 border border-border/50">
-            {[
-              {
-                icon: <Target className="w-6 h-6" />,
-                title: "ICP Identification",
-                desc: "AI analyzes your best customers to build a precise profile of who buys next."
-              },
-              {
-                icon: <Zap className="w-6 h-6" />,
-                title: "24-Hour Turnaround",
-                desc: "From sign-up to actionable data in one day. Speed is our currency."
-              },
-              {
-                icon: <BarChart3 className="w-6 h-6" />,
-                title: "10 High-Intent Leads",
-                desc: "Start with a sample of 10 verifed leads matching your exact criteria."
-              }
-            ].map((feature, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 + 0.4, duration: 0.5 }}
-                className="bg-background p-8 md:p-10 flex flex-col gap-4 hover:bg-secondary/20 transition-colors"
-              >
-                <div className="w-10 h-10 bg-secondary flex items-center justify-center text-foreground mb-2">
-                  {feature.icon}
-                </div>
-                <h3 className="text-lg font-medium font-display">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {feature.desc}
-                </p>
-              </motion.div>
-            ))}
+          {/* Feature 1: Discovery */}
+          <div className="grid md:grid-cols-2 gap-16 items-center mb-32 border-t border-border/50 pt-24">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="w-10 h-10 bg-secondary flex items-center justify-center text-foreground mb-6 rounded-lg">
+                <Search className="w-5 h-5" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-display font-medium mb-4">Smart Discovery</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                Connect your data sources, and let Extensa's AI analyze your network to uncover high-potential prospects that match your unique DNA.
+              </p>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Deep network analysis</li>
+                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Behavioral pattern matching</li>
+                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Automated ICP refinement</li>
+              </ul>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative"
+            >
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl blur-xl" />
+              <ICPChatMock />
+            </motion.div>
           </div>
+
+          {/* Feature 2: Matching */}
+          <div className="grid md:grid-cols-2 gap-16 items-center mb-32 border-t border-border/50 pt-24">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative order-2 md:order-1"
+            >
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl blur-xl" />
+              <LeadListMock />
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="order-1 md:order-2"
+            >
+              <div className="w-10 h-10 bg-secondary flex items-center justify-center text-foreground mb-6 rounded-lg">
+                <Users className="w-5 h-5" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-display font-medium mb-4">Intelligent Matching</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                Stop wasting time on cold outreach. Extensa scores every interaction to identify which prospects are ready to convert right now.
+              </p>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Real-time intent scoring</li>
+                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Priority ranking system</li>
+                <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Instant lead delivery</li>
+              </ul>
+            </motion.div>
+          </div>
+
         </div>
       </main>
       
