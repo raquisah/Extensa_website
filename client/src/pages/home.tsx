@@ -56,7 +56,9 @@ export default function Home() {
           <Link href="/vision"><a className="hover:text-foreground transition-colors">Vision</a></Link>
           <a href="#process" className="hover:text-foreground transition-colors">Process</a>
         </nav>
-        <div className="w-[70px] hidden sm:block"></div> {/* Spacer to balance layout since Login is gone */}
+        <Button variant="outline" className="font-medium hidden sm:flex rounded-none">
+          Get Early Access
+        </Button>
       </header>
 
       <main className="flex-grow relative z-20">

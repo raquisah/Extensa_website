@@ -24,7 +24,9 @@ export default function Vision() {
         <nav className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground">
           <Link href="/"><a className="hover:text-foreground transition-colors">Home</a></Link>
         </nav>
-        <div className="w-[70px] hidden sm:block"></div> {/* Spacer to balance layout since Login is gone */}
+        <Button variant="outline" className="font-medium hidden sm:flex rounded-none">
+          Get Early Access
+        </Button>
       </header>
 
       <main className="flex-grow relative z-20">
