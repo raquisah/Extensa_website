@@ -14,6 +14,9 @@ export default function Home() {
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
 
       {/* Navigation */}
+      <div className="bg-primary text-primary-foreground text-center py-2 px-4 text-xs md:text-sm font-medium z-30 relative">
+        Get ICP identification + 10 ICPs details w/ LinkedIn and email addresses for free in 24hs
+      </div>
       <header className="relative z-20 container mx-auto px-6 py-8 flex justify-between items-center">
         <div className="flex items-center gap-2">
           <Link href="/">
@@ -78,7 +81,7 @@ export default function Home() {
               <div className="text-sm font-mono text-muted-foreground mb-2">01. Search</div>
               <h2 className="text-3xl md:text-4xl font-display font-medium mb-4">Discovery Engine</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Connect your data sources, and let Extensa's AI analyze your network to uncover high-potential prospects that match your unique DNA.
+                Connect your data sources, and let Extensa's AI analyze your network. We know you: via LinkedIn, we uncover high-potential partners that match your unique DNA.
               </p>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Deep network analysis</li>
@@ -122,7 +125,7 @@ export default function Home() {
               <div className="text-sm font-mono text-muted-foreground mb-2">02. Find</div>
               <h2 className="text-3xl md:text-4xl font-display font-medium mb-4">Intelligent Matching</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Stop wasting time on cold outreach. Extensa scores every interaction to identify which prospects are ready to convert right now.
+                Stop wasting time on manual searching. Extensa scores every interaction to identify which connections are ready to engage right now.
               </p>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Real-time intent scoring</li>
@@ -143,9 +146,9 @@ export default function Home() {
                 <MessageSquare className="w-5 h-5" />
               </div>
               <div className="text-sm font-mono text-muted-foreground mb-2">03. Connects</div>
-              <h2 className="text-3xl md:text-4xl font-display font-medium mb-4">Automated Outreach</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-medium mb-4">Automated Connection</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Reach out at the perfect moment with AI-crafted messages that sound like you. Multi-channel sequences ensure you never miss an opportunity.
+                Connect at the perfect moment with AI-crafted messages that sound like you. Multi-channel sequences ensure you never miss an opportunity.
               </p>
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full" /> Personalized messaging</li>

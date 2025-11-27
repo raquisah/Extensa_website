@@ -101,7 +101,7 @@ export const ConnectMock = () => {
       <div className="p-3 border-b border-border flex items-center justify-between bg-muted/30">
         <div className="flex items-center gap-2">
           <div className="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-[10px] font-bold text-blue-600 dark:text-blue-400">AI</div>
-          <div className="text-[10px] font-medium">Outreach Sequence</div>
+          <div className="text-[10px] font-medium">Connection Sequence</div>
         </div>
         <div className="text-[10px] text-green-600 dark:text-green-400 font-medium flex items-center gap-1">
           <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" /> Active
